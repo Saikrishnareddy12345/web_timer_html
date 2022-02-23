@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #00a2ff;
+    background-image: url('bg3.jpg');
   }
   .clock{
     position: relative;
