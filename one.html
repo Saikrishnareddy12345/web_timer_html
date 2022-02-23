@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Clock</title>
+	<style type="text/css">
+	table { border: none; border-collapse: collapse; }
+table td { border-left: 1px solid #000; }
+table td:first-child { border-left: none; }</style>
+</head>
+<body onload="startTime()">
+<center>
+	<h1><span id="name"></span></h1>
+	<table style="border:1px solid black;">
+		<tr>
+			<td id="date" colspan="2"></td><td id="time" colspan="2"></td>
+		</tr>
+	</table>
+</center>
+<script type="text/javascript">
+	var name = prompt("Enter your name");
+	var nm = document.getElementById("name");
+	var dt = document.getElementById("date");
+	var tim = document.getElementById("time");
+	nm.innerHTML = name+'\'s clock';
+
+	function startTime()
+	{
+		var today=new Date();
+		var h=today.getHours();
+		var m=today.getMinutes();
+		var s=today.getSeconds();
+		// add a zero in front of numbers<10
+		m=checkTime(m);
+		s=checkTime(s);
+		tim.innerHTML="Time: "+h+":"+m+":"+s;
+		var mn = today.getMonth()+1;
+		var dat = today.getDate();
+		var yr = today.getFullYear();
+		dt.innerHTML = "Date: "+mn+"/"+dat+"/"+yr;
+		t=setTimeout(function(){startTime()},500);
+	}
+	function checkTime(i)
+	{
+		if (i<10)
+		  {
+		  i="0" + i;
+		  }
+		return i;
+	}
+</script>
+</body>
+</html>
