@@ -13,6 +13,6 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
-          source: "web_timer_html/*"
+          source: "*"
           target: "/var/www/html/"
           strip_components: 1
