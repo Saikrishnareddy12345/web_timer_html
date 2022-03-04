@@ -8,10 +8,10 @@ jobs:
       - name: deploy website to example.com
         uses: appleboy/scp-action@main
         env:
-          HOST: ${{ secrets.172.31.37.234 }}
-          USERNAME: ${{ secrets.root }}
-          PORT: ${{ secrets.80 }}
-          KEY: ${{ secrets.root }}
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.KEY }}
         with:
           source: "web_timer_html/*"
           target: "/var/www/html/"
